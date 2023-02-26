@@ -92,15 +92,15 @@ class BinaryTree {
 
   /// обход в глубину
   traverseDFS(callback, method) {
-    if ((method === 'preOrder')) {
+    if (method === 'preOrder') {
       return this.preOrder(this.root, callback);
     }
 
-    if ((method ==='inOrder')) {
+    if (method === 'inOrder') {
       return this.inOrder(this.root, callback);
     }
 
-    return postOrder(this.root, callback);
+    return this.postOrder(this.root, callback);
   }
 
   /// обход в ширину
@@ -127,8 +127,8 @@ console.log('tree:', myTree);
 
 myTree.traverseDFS((node) => {
   console.log('inOrder:', node.value);
-}, 'inOrder'); ///
+}, 'inOrder'); /// 2, 5, 6, 7, 8, 9, 10, 11, 20
 
 // myTree.traverseDFS((node) => {
 //   console.log('postOrder:', node.value);
-// }, 'postOrder'); ///
+// }, 'postOrder'); /// 2, 6, 5, 7, 11, 20, 10, 9, 8
