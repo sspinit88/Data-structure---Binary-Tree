@@ -5,7 +5,6 @@
  *        5          10
  *     2     6          20
  *                   11
- *
  */
 
 class Node {
@@ -120,15 +119,19 @@ myTree.add(2);
 myTree.add(11);
 
 console.log('tree:', myTree);
+console.log('- - -');
 
-// myTree.traverseDFS((node) => {
-//   console.log('preOrder:', node.value);
-// }, 'preOrder'); /// 8, 7, 5, 2, 6, 9, 10, 20, 11
+myTree.traverseDFS((node) => {
+  console.log('preOrder:', node.value);
+}, 'preOrder'); /// 8, 7, 5, 2, 6, 9, 10, 20, 11
+console.log('- - -');
 
 myTree.traverseDFS((node) => {
   console.log('inOrder:', node.value);
 }, 'inOrder'); /// 2, 5, 6, 7, 8, 9, 10, 11, 20
+console.log('- - -');
 
-// myTree.traverseDFS((node) => {
-//   console.log('postOrder:', node.value);
-// }, 'postOrder'); /// 2, 6, 5, 7, 11, 20, 10, 9, 8
+myTree.traverseDFS((node) => {
+  console.log('postOrder:', node.value);
+}, 'postOrder'); /// 2, 6, 5, 7, 11, 20, 10, 9, 8
+console.log('- - -');
