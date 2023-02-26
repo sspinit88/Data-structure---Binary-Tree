@@ -35,6 +35,7 @@ class BinaryTree {
 
         if (!currentNode.left) {
           currentNode.left = newNode;
+          return;
         }
 
         currentNode = currentNode.left;
