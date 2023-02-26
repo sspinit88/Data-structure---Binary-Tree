@@ -3,10 +3,9 @@
  *          7     9
  *        5          10
  *     2     6          20
- *                   11 
- * 
-*/
-
+ *                   11
+ *
+ */
 
 class Node {
   constructor(value) {
@@ -17,15 +16,36 @@ class Node {
 }
 
 class BinaryTree {
-
-  constructor(){
+  constructor() {
     this.root = null;
   }
 
   add(value) {
+    const newNode = new Node(value);
 
+    if (!this.root) {
+      this.root = newNode;
+    }
+
+    let currentNode = this.root;
+
+    while (currentNode) {
+      
+      if (newNode.value < currentNode.value) {
+        if (!currentNode.left) {
+          currentNode.left = newNode;
+        }
+
+        currentNode = currentNode.left;
+      } else {
+        if (!currentNode.right) {
+          currentNode.right = newNode;
+          return;
+        }
+      }
+
+    }
   }
-
 }
 
 const myTree = new BinaryTree();
@@ -40,5 +60,4 @@ myTree.add(6);
 myTree.add(2);
 myTree.add(11);
 
-
-console.log(myTree)
+console.log(myTree);
