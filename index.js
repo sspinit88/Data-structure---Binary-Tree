@@ -30,21 +30,26 @@ class BinaryTree {
     let currentNode = this.root;
 
     while (currentNode) {
-      
+
       if (newNode.value < currentNode.value) {
+
         if (!currentNode.left) {
           currentNode.left = newNode;
         }
 
         currentNode = currentNode.left;
+
       } else {
+
         if (!currentNode.right) {
           currentNode.right = newNode;
           return;
         }
+     
       }
 
     }
+    
   }
 }
 
