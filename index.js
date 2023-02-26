@@ -43,6 +43,8 @@ class BinaryTree {
           currentNode.right = newNode;
           return;
         }
+
+        currentNode = currentNode.right;
       }
     }
   }
