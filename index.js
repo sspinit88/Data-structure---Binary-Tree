@@ -1,4 +1,5 @@
 /**
+ * Будущая структура:
  *             8
  *          7     9
  *        5          10
@@ -48,6 +49,39 @@ class BinaryTree {
       }
     }
   }
+
+  preOrder(node, callback) {
+    if (!node) {
+      return;
+    }
+
+    if (callback) {
+      callback(node);
+    }
+
+    this.preOrder(node.left, callback);
+    this.preOrder(node.right, callback);
+  }
+
+  inOrder(node, callback) {}
+
+  postOrder(node, callback) {}
+
+  /// обход в глубину
+  traverseDFS(callback, method) {
+    if ((method = 'preOrder')) {
+      return this.preOrder(this.root, callback);
+    }
+
+    if ((method = 'inOrder')) {
+      return this.inOrder(this.root, callback);
+    }
+
+    return postOrder(this.root, callback);
+  }
+
+  /// обход в ширину
+  traverseBFS() {}
 }
 
 const myTree = new BinaryTree();
@@ -62,4 +96,8 @@ myTree.add(6);
 myTree.add(2);
 myTree.add(11);
 
-console.log(myTree);
+console.log('tree:', myTree);
+
+myTree.traverseDFS((node) => {
+  console.log('preOrder:', node.value);
+}, 'preOrder');
