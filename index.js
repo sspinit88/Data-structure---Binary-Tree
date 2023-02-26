@@ -103,7 +103,22 @@ class BinaryTree {
   }
 
   /// обход в ширину
-  traverseBFS() {}
+  traverseBFS(callback) {
+    const queue = [this.root];
+
+    while (queue.length) {
+      const node = queue.shift();
+      callback(node);
+
+      if (node.left) {
+        queue.push(node.left);
+      }
+
+      if (node.right) {
+        queue.push(node.right);
+      }
+    }
+  }
 }
 
 const myTree = new BinaryTree();
@@ -135,3 +150,7 @@ myTree.traverseDFS((node) => {
   console.log('postOrder:', node.value);
 }, 'postOrder'); /// 2, 6, 5, 7, 11, 20, 10, 9, 8
 console.log('- - -');
+
+myTree.traverseBFS((node) => {
+  console.log('traverseBFS:', node.value);
+});
