@@ -52,14 +52,14 @@ class BinaryTree {
 
 const myTree = new BinaryTree();
 
-// myTree.add(8);
-// myTree.add(7);
-// myTree.add(9);
-// myTree.add(5);
-// myTree.add(10);
-// myTree.add(20);
-// myTree.add(6);
-// myTree.add(2);
-// myTree.add(11);
+myTree.add(8);
+myTree.add(7);
+myTree.add(9);
+myTree.add(5);
+myTree.add(10);
+myTree.add(20);
+myTree.add(6);
+myTree.add(2);
+myTree.add(11);
 
-// console.log(myTree);
+console.log(myTree);
