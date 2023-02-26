@@ -63,17 +63,40 @@ class BinaryTree {
     this.preOrder(node.right, callback);
   }
 
-  inOrder(node, callback) {}
+  inOrder(node, callback) {
+    if (!node) {
+      return;
+    }
 
-  postOrder(node, callback) {}
+    this.inOrder(node.left, callback);
+
+    if (callback) {
+      callback(node);
+    }
+
+    this.inOrder(node.right, callback);
+  }
+
+  postOrder(node, callback) {
+    if (!node) {
+      return;
+    }
+
+    this.postOrder(node.left, callback);
+    this.postOrder(node.right, callback);
+
+    if (callback) {
+      callback(node);
+    }
+  }
 
   /// обход в глубину
   traverseDFS(callback, method) {
-    if ((method = 'preOrder')) {
+    if ((method === 'preOrder')) {
       return this.preOrder(this.root, callback);
     }
 
-    if ((method = 'inOrder')) {
+    if ((method ==='inOrder')) {
       return this.inOrder(this.root, callback);
     }
 
@@ -98,6 +121,14 @@ myTree.add(11);
 
 console.log('tree:', myTree);
 
+// myTree.traverseDFS((node) => {
+//   console.log('preOrder:', node.value);
+// }, 'preOrder'); /// 8, 7, 5, 2, 6, 9, 10, 20, 11
+
 myTree.traverseDFS((node) => {
-  console.log('preOrder:', node.value);
-}, 'preOrder');
+  console.log('inOrder:', node.value);
+}, 'inOrder'); ///
+
+// myTree.traverseDFS((node) => {
+//   console.log('postOrder:', node.value);
+// }, 'postOrder'); ///
