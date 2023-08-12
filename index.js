@@ -21,12 +21,11 @@ Cамые нижние элементы, которые не имеют доче
  * Будущая структура:
  *             8 - корень
  *          7     9
- *        5          10 - внутренний узел 
+ *        5          10 - внутренний узел
  *     2     6          20
  *                   11
  *        листья (2, 6, 11)
  */
-
 
 class Node {
   constructor(value) {
@@ -72,6 +71,11 @@ class BinaryTree {
     }
   }
 
+  /*
+    1. Действие с node. (через коллбек)
+    2. Идем по левому поддереву
+    3. Идем по правому поддереву.
+  */
   preOrder(node, callback) {
     if (!node) {
       return;
@@ -85,6 +89,11 @@ class BinaryTree {
     this.preOrder(node.right, callback);
   }
 
+  /*
+    1. Идем по левому поддереву в глубину.
+    2. Проводим действие с node. (через коллбек)
+    3. Идем по правому поддереву.
+  */
   inOrder(node, callback) {
     if (!node) {
       return;
@@ -99,6 +108,11 @@ class BinaryTree {
     this.inOrder(node.right, callback);
   }
 
+  /*
+    1. Идем по левому поддереву в глубину.
+    2. Идем по правому поддереву.
+    3. Проводим действие с node. (через коллбек)
+  */
   postOrder(node, callback) {
     if (!node) {
       return;
