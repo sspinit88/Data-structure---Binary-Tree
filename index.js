@@ -41,9 +41,11 @@ class BinaryTree {
     this.root = null;
   }
 
+  ///add - добавляет элементы
   add(value) {
     const newNode = new Node(value);
 
+    /// если рута нет, то присваиваем ему новую ноду
     if (!this.root) {
       this.root = newNode;
       return;
