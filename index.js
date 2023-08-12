@@ -27,6 +27,7 @@ Cамые нижние элементы, которые не имеют доче
  *        листья (2, 6, 11)
  */
 
+
 class Node {
   constructor(value) {
     this.value = value;
