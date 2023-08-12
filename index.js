@@ -139,7 +139,7 @@ class BinaryTree {
     return this.postOrder(this.root, callback);
   }
 
-  /// обход в ширину
+  /// обход в ширину (через очередь)
   traverseBFS(callback) {
     const queue = [this.root];
 
